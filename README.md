@@ -16,6 +16,8 @@ Current skins:
 
 * [Windows 7 AO3 Site Skin](./window-7-them.css)
   A nostalgic theme inspired by the Windows 7 / Aero era.
+  <img width="736" height="964" alt="image" src="https://github.com/user-attachments/assets/92e72f4b-4e9a-48e8-84ad-c312621fe85d" />
+
 
 More **AO3 site skins** are coming, including dark themes, retro web styles, cozy reading themes, and other visual experiments.
 
