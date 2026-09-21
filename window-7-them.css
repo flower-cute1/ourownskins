@@ -1,0 +1,1159 @@
+:root {
+  --sc-canvas: #008080;        
+  --sc-canvas-2: #006666;      
+  --sc-face: #d4d0c8;          
+  --sc-face-2: #c4c0b8;        
+  --sc-hi: #ffffff;            
+  --sc-shadow: #808080;        
+  --sc-dark: #404040;          
+  --sc-paper: #f4f1e4;  
+  --sc-paper-2: #e8e4d4;     
+  --sc-ink: #1c1a14;           
+  --sc-muted: #5c5848;         
+  --sc-heading: #000080;       
+  --sc-link: #000080;          
+  --sc-visited: #551a8b;       
+  --sc-accent: #000080;        
+  --sc-caption-lo: #000080;    
+  --sc-caption-hi: #1084d0;    
+  --sc-select: #000080;        
+  --sc-select-ink: #ffffff;
+  --sc-chrome: #1c1a14;        
+  --sc-line: #b8b4a8;
+  --sc-drop: #000000;
+  --sc-tooltip: #ffffe1;       
+  --sc-error: #5c2018;
+  --sc-error-bg: #e8d0c8;
+}
+
+
+html {
+  background-color: var(--sc-canvas);
+  color-scheme: light;
+  scrollbar-color: var(--sc-face) var(--sc-canvas);
+}
+
+body {
+  min-width: 0;
+  margin: 0;
+  background-color: var(--sc-canvas);
+  background-image: repeating-linear-gradient(0deg, #008080 0px, #008080 11px, #007373 11px, #007373 12px), repeating-linear-gradient(90deg, #008080 0px, #008080 11px, #007373 11px, #007373 12px);
+  color: var(--sc-ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body,
+input,
+button,
+select,
+textarea,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown {
+  background-color: var(--sc-face);
+  color: var(--sc-ink);
+}
+
+#outer.wrapper,
+#inner.wrapper {
+  background-color: var(--sc-canvas);
+  background-image: repeating-linear-gradient(0deg, #008080 0px, #008080 11px, #007373 11px, #007373 12px), repeating-linear-gradient(90deg, #008080 0px, #008080 11px, #007373 11px, #007373 12px);
+}
+
+#inner.wrapper {
+  padding-top: 0.65em;
+  padding-right: 1.15em;
+  padding-bottom: 1.4em;
+  padding-left: 1.15em;
+}
+
+::selection {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.heading {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  color: var(--sc-heading);
+  font-weight: bold;
+}
+
+a,
+a:link {
+  color: var(--sc-link);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:visited {
+  color: var(--sc-visited);
+}
+
+a:hover,
+a:focus,
+a:visited:hover {
+  color: var(--sc-caption-hi);
+  border-bottom-color: currentcolor;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 1px dotted var(--sc-dark);
+}
+
+code, kbd, tt, samp, var, pre {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  background-color: var(--sc-paper-2);
+  color: var(--sc-ink);
+  border: 1px solid var(--sc-shadow);
+}
+
+blockquote {
+  color: var(--sc-ink);
+}
+
+/* 03 — Header and navigation — gray taskbar, Start button ------------------ */
+
+#header {
+  font-size: 0.95em;
+  margin: 0;
+  padding: 0.2em 0.25em 0;
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-bottom: 2px solid var(--sc-dark);
+  box-shadow: inset 0 -1px 0 var(--sc-shadow), 0 2px 0 var(--sc-drop);
+}
+
+#header,
+#header .heading,
+#header h1,
+#header h1.heading,
+#header h2 {
+  color: var(--sc-chrome);
+}
+
+#header a,
+#header a:link,
+#header a:visited {
+  color: var(--sc-chrome);
+  border-bottom: 0;
+}
+
+#header .dropdown {
+  background-color: transparent;
+}
+
+/* Start button — beat L329 (≥ 1,1,1). */
+#header .heading {
+  float: left;
+  padding: 0.2em 0.3em 0.25em 0.2em;
+}
+
+#header .heading a,
+#header .heading a:visited {
+  color: var(--sc-chrome);
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  box-shadow: none;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 1.15em;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  padding: 0.12em 0.7em 0.12em 0.55em;
+}
+
+#header .heading a:hover,
+#header .heading a:focus {
+  background-color: var(--sc-face-2);
+  color: var(--sc-accent);
+}
+
+#header .heading a:active {
+  border-top-color: var(--sc-dark);
+  border-left-color: var(--sc-dark);
+  border-right-color: var(--sc-hi);
+  border-bottom-color: var(--sc-hi);
+  box-shadow: none;
+}
+
+/* Bitmap logo fights the Start-button wordmark. */
+#header .logo {
+  display: none;
+}
+
+#header h2 {
+  border-top: 1px solid var(--sc-shadow);
+  color: var(--sc-chrome);
+  background-color: var(--sc-face-2);
+}
+
+#login,
+#greeting {
+  margin-top: 0.2em;
+  margin-right: 0.3em;
+}
+
+/* Tray chips — beat L329. */
+#header .user a,
+#header .user a:visited,
+#small_login .action {
+  color: var(--sc-chrome);
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 1px solid var(--sc-hi);
+  border-left: 1px solid var(--sc-hi);
+  border-right: 1px solid var(--sc-dark);
+  border-bottom: 1px solid var(--sc-dark);
+  border-radius: 0;
+  padding: 0.18em 0.55em;
+  margin: 0 0.06em;
+  box-shadow: none;
+}
+
+#header .user a:hover,
+#header .user a:focus,
+#header .dropdown:hover > a,
+#header .open > a,
+#greeting .dropdown:hover > a,
+#greeting .open > a {
+  background-color: var(--sc-face);
+  background-image: none;
+  color: var(--sc-accent);
+  border-radius: 0;
+}
+
+#greeting p.icon {
+  padding-top: 0.2em;
+}
+
+#greeting img.icon {
+  border-top: 1px solid var(--sc-shadow);
+  border-left: 1px solid var(--sc-shadow);
+  border-right: 1px solid var(--sc-hi);
+  border-bottom: 1px solid var(--sc-hi);
+}
+
+#header .menu,
+#header .primary .menu,
+#small_login {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  box-shadow: 2px 2px 0 var(--sc-drop), inset 1.35em 0 0 var(--sc-caption-lo);
+  border-radius: 0;
+  padding: 0.15em 0 0.15em 0;
+}
+
+#header .menu li {
+  border-bottom: 0;
+  margin: 0;
+}
+
+#header .dropdown .menu a,
+#header .primary .menu a,
+#header .dropdown .menu a:link,
+#header .dropdown .menu a:visited {
+  color: var(--sc-ink);
+  background-color: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.4em 0.85em 0.4em 1.75em;
+}
+
+#header .dropdown .menu a:hover,
+#header .dropdown .menu a:focus,
+#header .primary .menu a:hover,
+#header .primary .menu a:focus {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+}
+
+#header .dropdown:hover .menu,
+#header .dropdown.open .menu,
+#header .open .menu {
+  display: block;
+}
+
+/* Taskbar row — same gray as the bar, not a colored strip. */
+#header .primary {
+  background-color: var(--sc-face);
+  background-image: none;
+  box-shadow: none;
+  border-top: 1px solid var(--sc-shadow);
+  padding: 0.15em 0.15em 0.2em;
+  width: 100%;
+}
+
+#header .primary > li:first-of-type {
+  margin-left: 0.15em;
+}
+
+#header .primary > li > a,
+#header .primary > li > a:link,
+#header .primary > li > a:visited {
+  color: var(--sc-chrome);
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.28em 0.85em;
+  margin: 0 0.12em 0 0;
+}
+
+#header .primary > li > a:hover,
+#header .primary > li > a:focus,
+#header .primary > li.dropdown:hover > a,
+#header .primary > li.open > a {
+  background-color: var(--sc-face-2);
+  color: var(--sc-ink);
+}
+
+#header .search {
+  color: var(--sc-ink);
+}
+
+#header #search .text,
+#header #search input.text {
+  background-color: var(--sc-hi);
+  color: var(--sc-ink);
+  border-top: 2px solid var(--sc-shadow);
+  border-left: 2px solid var(--sc-shadow);
+  border-right: 2px solid var(--sc-hi);
+  border-bottom: 2px solid var(--sc-hi);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.15em 0.35em;
+}
+
+#header #search .button,
+#header #search input[type="submit"] {
+  background-color: var(--sc-face);
+  background-image: none;
+  color: var(--sc-chrome);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#header #search .tip {
+  color: var(--sc-muted);
+}
+
+
+#dashboard,
+#dashboard.own {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-top-color: var(--sc-hi);
+  border-bottom-color: var(--sc-dark);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--sc-drop);
+  box-sizing: border-box;
+}
+
+#dashboard a,
+#dashboard span {
+  color: var(--sc-ink);
+}
+
+#dashboard a:hover,
+#dashboard a:focus {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+}
+
+#dashboard ul {
+  border-top-color: var(--sc-shadow);
+}
+
+#dashboard .current {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+}
+
+#dashboard .secondary {
+  background-color: var(--sc-face);
+  box-shadow: 2px 2px 0 var(--sc-drop);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+}
+
+
+#main,
+#main.region,
+#main.dashboard,
+#main.errors {
+  background-color: var(--sc-paper);
+  background-image: linear-gradient(to right, #000080 0px, #1084d0 100%), linear-gradient(#d4d0c8, #d4d0c8);
+  background-size: 100% 1.55em, 100% 2.25em;
+  background-repeat: no-repeat, no-repeat;
+  background-position: 0 0, 0 0;
+  color: var(--sc-ink);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--sc-drop);
+  box-sizing: border-box;
+  padding-top: 2.55em;
+  padding-right: 1.15em;
+  padding-bottom: 1.35em;
+  padding-left: 1.15em;
+}
+
+#main.home {
+  padding-top: 2.6em;
+}
+
+#main > .flash:empty {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#main > h2.heading,
+#main h2.heading {
+  color: var(--sc-heading);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 1.05em;
+  letter-spacing: 0;
+}
+
+#main.works-index > h2.heading,
+#main.filtered > h2.heading {
+  background-color: var(--sc-caption-lo);
+  background-image: linear-gradient(to right, #000080 0px, #1084d0 100%);
+  color: var(--sc-select-ink);
+  font-size: 0.8em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: -2.5em -0.85em 1.7em;
+  overflow: hidden;
+  padding: 0.28em 0.55em 0.22em;
+  white-space: nowrap;
+}
+
+#main.works-index > h2.heading a,
+#main.filtered > h2.heading a,
+#main.works-index > h2.heading a:link,
+#main.filtered > h2.heading a:visited {
+  color: var(--sc-select-ink);
+  border-bottom: 0;
+}
+
+.splash .module h3.heading {
+  color: var(--sc-heading);
+  border-bottom: 2px solid var(--sc-shadow);
+  font-size: 0.95em;
+}
+
+.splash .browse li a:before {
+  color: var(--sc-muted);
+}
+
+.splash .favorite li:nth-of-type(odd) a {
+  background-color: var(--sc-paper-2);
+}
+
+.splash .favorite li:nth-of-type(odd) a:hover,
+.splash .favorite li:nth-of-type(odd) a:focus {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+}
+
+.splash .module div.account,
+.splash .intro .account {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+}
+
+.splash .news li {
+  border-bottom-color: var(--sc-line);
+}
+
+.splash .news .heading .title,
+.splash .module .heading {
+  color: var(--sc-heading);
+}
+
+.home .header h2 {
+  border-bottom-color: var(--sc-shadow);
+}
+
+/* 06 — Blurbs — Explorer details-view rows --------------------------------- */
+
+li.blurb,
+.listbox li.blurb,
+.blurb .blurb,
+.work.blurb.group,
+.bookmark.blurb.group {
+  background-color: transparent;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid var(--sc-line);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0.55em 0.65em 0.6em 0.7em;
+}
+
+li.blurb:nth-of-type(odd),
+.work.blurb.group:nth-of-type(odd) {
+  background-color: var(--sc-paper-2);
+}
+
+li.blurb:hover,
+.work.blurb.group:hover,
+.bookmark.blurb.group:hover {
+  background-color: #d8dce8;
+  border-left-color: var(--sc-accent);
+}
+
+.blurb h4 a:link,
+.blurb h4 a:visited,
+.blurb .heading a:link,
+.blurb .heading a:visited {
+  color: var(--sc-heading);
+  border-bottom: 0;
+}
+
+.blurb h4 a:hover,
+.blurb .heading a:hover {
+  color: var(--sc-caption-hi);
+  background-color: transparent;
+}
+
+.blurb .datetime,
+.bookmark div.user .datetime {
+  color: var(--sc-ink);
+  background-color: var(--sc-face);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.72em;
+  letter-spacing: 0.02em;
+  padding: 0.12em 0.4em;
+  border-top: 1px solid var(--sc-hi);
+  border-left: 1px solid var(--sc-hi);
+  border-right: 1px solid var(--sc-dark);
+  border-bottom: 1px solid var(--sc-dark);
+}
+
+.blurb blockquote {
+  color: var(--sc-ink);
+  border: 0;
+  background-color: transparent;
+}
+
+.blurb dl.stats {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+  color: var(--sc-muted);
+}
+
+.blurb ul.required-tags {
+  border-top: 1px solid var(--sc-shadow);
+  border-left: 1px solid var(--sc-shadow);
+  border-right: 1px solid var(--sc-hi);
+  border-bottom: 1px solid var(--sc-hi);
+  background-color: var(--sc-face);
+  padding: 0.15em;
+}
+
+/* 07 — Tags ---------------------------------------------------------------- */
+
+a.tag {
+  color: var(--sc-link);
+  background-color: transparent;
+  border-bottom: 1px dotted var(--sc-shadow);
+}
+
+a.tag:hover {
+  background-color: var(--sc-select);
+  color: var(--sc-select-ink);
+  border-bottom-color: var(--sc-select);
+}
+
+li.relationships a {
+  background-color: var(--sc-paper-2);
+  border-top: 1px solid var(--sc-shadow);
+  border-left: 1px solid var(--sc-shadow);
+  border-right: 1px solid var(--sc-hi);
+  border-bottom: 1px solid var(--sc-hi);
+  border-radius: 0;
+  padding: 0.05em 0.35em;
+}
+
+li.warnings a.tag {
+  color: #8a2018;
+  font-weight: bold;
+}
+
+a.cloud1, a.cloud2 { color: var(--sc-muted); }
+a.cloud3, a.cloud4 { color: #404070; }
+a.cloud5, a.cloud6 { color: var(--sc-link); }
+a.cloud7, a.cloud8 { color: #000060; }
+
+/* 08 — Meta and stats ------------------------------------------------------ */
+
+dl.meta,
+.work.meta.group,
+.listbox {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+dl.stats,
+.blurb dl.stats {
+  color: var(--sc-muted);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+.listbox .heading {
+  color: var(--sc-select-ink);
+  background-color: var(--sc-caption-lo);
+  background-image: linear-gradient(to right, #000080 0px, #1084d0 100%);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+  font-weight: bold;
+  padding: 0.2em 0.45em;
+}
+
+dl.meta dt {
+  color: var(--sc-muted);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+}
+
+/* 09 — Forms --------------------------------------------------------------- */
+
+fieldset,
+form dl,
+fieldset dl dl,
+form blockquote.userstuff {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+legend {
+  color: var(--sc-heading);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  background-color: var(--sc-hi);
+  color: var(--sc-ink);
+  border-top: 2px solid var(--sc-shadow);
+  border-left: 2px solid var(--sc-shadow);
+  border-right: 2px solid var(--sc-hi);
+  border-bottom: 2px solid var(--sc-hi);
+  border-radius: 0;
+  box-shadow: none;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--sc-hi);
+  outline: 1px dotted var(--sc-dark);
+}
+
+/* 10 — Actions and buttons — classic 3D face ------------------------------- */
+
+.actions a,
+.actions a:link,
+.actions a:visited,
+.action,
+.action:link,
+.action:visited,
+.actions button,
+.actions input,
+input[type="submit"],
+button,
+.current,
+.actions label {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--sc-chrome);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-weight: normal;
+  height: auto;
+  padding: 0.22em 0.75em;
+}
+
+.actions a:hover,
+.actions a:focus,
+.action:hover,
+.action:focus,
+label.action:hover,
+.actions button:hover,
+.actions button:focus,
+.actions input:hover,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus {
+  background-color: var(--sc-face);
+  background-image: none;
+  color: var(--sc-accent);
+  box-shadow: none;
+}
+
+.actions a:active,
+.current,
+a.current,
+a:link.current,
+.current a:visited {
+  background-color: var(--sc-face-2);
+  background-image: none;
+  border-top-color: var(--sc-dark);
+  border-left-color: var(--sc-dark);
+  border-right-color: var(--sc-hi);
+  border-bottom-color: var(--sc-hi);
+  color: var(--sc-ink);
+  box-shadow: inset 1px 1px 0 var(--sc-shadow);
+}
+
+ol.pagination a,
+div.pagination a,
+ol.pagination .current,
+ol.pagination span.current,
+ol.pagination .disabled {
+  border-radius: 0;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+#kudo_submit,
+#new_kudo input[type="submit"] {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  color: var(--sc-accent);
+  font-weight: bold;
+}
+
+#kudo_submit:hover,
+#kudo_submit:focus,
+#new_kudo input[type="submit"]:hover,
+#new_kudo input[type="submit"]:focus {
+  background-color: var(--sc-face-2);
+  background-image: none;
+  color: var(--sc-accent);
+}
+
+.secondary,
+#dashboard .secondary {
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  background-color: var(--sc-face);
+  box-shadow: 2px 2px 0 var(--sc-drop);
+}
+
+.work.navigation .download,
+.javascript .work.navigation .download .secondary {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--sc-drop);
+}
+
+.work.navigation .download .secondary,
+.javascript .work.navigation .download {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.work.navigation.actions {
+  margin-bottom: 1em;
+}
+
+/* Region-scoped copies — `#main .actions a` beats the official (0,2,1) hover. */
+#main .actions a,
+#main .actions a:link,
+#main .actions a:visited,
+#main .action,
+#main .actions button,
+#main .actions input,
+#main input[type="submit"],
+#main button,
+#main .current {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  color: var(--sc-chrome);
+}
+
+#main .actions a:hover,
+#main .actions a:focus,
+#main .action:hover,
+#main button:hover,
+#main input[type="submit"]:hover {
+  background-color: var(--sc-face);
+  background-image: none;
+  color: var(--sc-accent);
+}
+
+#main .current {
+  background-color: var(--sc-face-2);
+  background-image: none;
+  border-top-color: var(--sc-dark);
+  border-left-color: var(--sc-dark);
+  border-right-color: var(--sc-hi);
+  border-bottom-color: var(--sc-hi);
+  color: var(--sc-ink);
+  box-shadow: inset 1px 1px 0 var(--sc-shadow);
+}
+
+/* 11 — Filters sidebar ------------------------------------------------------ */
+
+/* Paint only — do not set width or float (official 23%/75% is desktop-only). */
+form.filters {
+  box-sizing: border-box;
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  padding: 0.45em 0.55em 0.75em;
+}
+
+form.filters input,
+form.filters select,
+form.filters textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+form.filters fieldset,
+form.filters dl {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+form.filters dt,
+form.filters .expander {
+  color: var(--sc-heading);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+form.filters .expander { color: var(--sc-link); }
+
+.filtered .index {
+  background-color: transparent;
+}
+
+/* 12 — Work and chapter reading -------------------------------------------- */
+
+#workskin {
+  background-color: transparent;
+  color: var(--sc-ink);
+}
+
+.userstuff,
+.announcement .userstuff,
+.bookmark .user .userstuff {
+  color: var(--sc-ink);
+  font-family: Georgia, Palatino, "Book Antiqua", "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+#chapters .userstuff {
+  font-family: Georgia, Palatino, "Book Antiqua", "Times New Roman", serif;
+  color: var(--sc-ink);
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.08em;
+  line-height: 1.75;
+}
+
+.userstuff p { margin-bottom: 1.05em; }
+
+.userstuff blockquote {
+  background-color: var(--sc-paper-2);
+  border-top: 2px solid var(--sc-shadow);
+  border-left: 2px solid var(--sc-shadow);
+  border-right: 2px solid var(--sc-hi);
+  border-bottom: 2px solid var(--sc-hi);
+  border-radius: 0;
+  color: var(--sc-ink);
+  padding: 0.45em 0.85em;
+}
+
+.userstuff h1,
+.userstuff h2,
+.userstuff h3,
+.userstuff h4 {
+  color: var(--sc-heading);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  border-bottom-color: var(--sc-line);
+}
+
+.userstuff h3 {
+  border-bottom: 2px solid var(--sc-shadow);
+  font-weight: bold;
+}
+
+.userstuff hr {
+  width: 28%;
+  border: 0;
+  border-bottom: 2px solid var(--sc-shadow);
+}
+
+div.preface,
+.chapter .preface {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  padding: 0.75em 1em 0.55em;
+}
+
+div.preface .title,
+div.preface .byline,
+div.preface .byline a {
+  color: var(--sc-heading);
+  font-family: Georgia, Palatino, "Book Antiqua", "Times New Roman", serif;
+}
+
+div.preface .title {
+  border-bottom: 2px solid var(--sc-shadow);
+  padding-bottom: 0.3em;
+}
+
+div.preface .byline a { border-bottom: 0; }
+
+.summary.module,
+.notes.module,
+.end.notes.module {
+  background-color: transparent;
+  border: 0;
+  padding: 0.35em 0 0.15em;
+}
+
+.summary.module .heading,
+.notes.module .heading,
+.end.notes.module .heading {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: var(--sc-muted);
+}
+
+.chapter .title,
+.chapter .title a {
+  color: var(--sc-heading);
+  font-family: Georgia, Palatino, "Book Antiqua", "Times New Roman", serif;
+  border-bottom: 0;
+}
+
+/* 13 — Comments ------------------------------------------------------------- */
+
+div.comment,
+li.comment {
+  background-color: var(--sc-paper);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+}
+
+.comment h4.byline {
+  background-color: var(--sc-caption-lo);
+  background-image: linear-gradient(to right, #000080 0px, #1084d0 100%);
+  color: var(--sc-select-ink);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.comment h4.byline a,
+.comment h4.byline a:link,
+.comment h4.byline a:visited {
+  color: var(--sc-select-ink);
+  border-bottom: 0;
+}
+
+.comment div.icon { border-bottom-color: var(--sc-shadow); }
+
+.thread .even { background-color: var(--sc-paper-2); }
+
+.comment .userstuff {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: Georgia, Palatino, "Book Antiqua", "Times New Roman", serif;
+}
+
+#kudos { color: var(--sc-muted); }
+#kudos a { color: var(--sc-link); }
+
+/* 14 — System messages ------------------------------------------------------ */
+
+.flash .notice,
+.notice {
+  background-color: var(--sc-face);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  color: var(--sc-ink);
+}
+
+.flash .error,
+.error,
+div.error,
+.comment_error {
+  background-color: var(--sc-error-bg);
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  color: var(--sc-error);
+}
+
+.flash .caution,
+.caution {
+  background-color: var(--sc-tooltip);
+  border: 1px solid var(--sc-dark);
+  border-radius: 0;
+  color: var(--sc-ink);
+}
+
+/* 15 — Footer — matching gray taskbar -------------------------------------- */
+
+#footer {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  color: var(--sc-chrome);
+  box-shadow: inset 0 1px 0 var(--sc-hi);
+  margin-top: 0.5em;
+}
+
+#footer a,
+#footer a:visited,
+#footer button {
+  color: var(--sc-chrome);
+}
+
+#footer a:hover,
+#footer button:hover {
+  color: var(--sc-accent);
+}
+
+#footer .heading {
+  color: var(--sc-chrome);
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+  font-weight: bold;
+}
+
+#footer .navigation a,
+#footer .menu a {
+  color: var(--sc-chrome);
+}
+
+#footer button {
+  background-color: var(--sc-face);
+  background-image: none;
+  border-top: 2px solid var(--sc-hi);
+  border-left: 2px solid var(--sc-hi);
+  border-right: 2px solid var(--sc-dark);
+  border-bottom: 2px solid var(--sc-dark);
+  border-radius: 0;
+  color: var(--sc-chrome);
+  box-shadow: none;
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
+#footer button:hover,
+#footer button:focus {
+  background-color: var(--sc-face);
+  background-image: none;
+  color: var(--sc-accent);
+}
